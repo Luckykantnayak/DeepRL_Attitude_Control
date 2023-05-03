@@ -8,6 +8,8 @@ Programming language and  Libraries used :
 5. gym==0.26.2
 6. plotly==5.14.1
 
+Use pyenv for maintaining python virtual environment : https://realpython.com/intro-to-pyenv/
+
 Sources used as template :
 1. https://colab.research.google.com/github/Curt-Park/rainbow-is-all-you-need/blob/master/03.per.ipynb#scrollTo=qEx9h3n0uVUK
 2. https://github.com/jakeelkins/rl-attitude-control
