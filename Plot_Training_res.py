@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 # Read data from .txt file
-filename = 'Spacecraft_DDQN_UNIF_4.txt'  # Update with your actual file name
+filename = 'Spacecraft_DDQN_UNIF_2.txt'  # Update with your actual file name
 data = []
 with open(filename, 'r') as f:
     for line in f:
