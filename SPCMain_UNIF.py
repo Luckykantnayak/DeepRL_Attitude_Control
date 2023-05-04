@@ -8,7 +8,7 @@ if __name__ == '__main__':
     Ename = 'Spacecraft_DDQN_UNIF_4'
     I = np.array([[0.872, 0,0],[0, 0.115,0],[0,0, 0.797]])
     env = AttitudeControlEnv(steps=650)
-    ddqn_agent = DDQNAgent(lr=1e-4, gamma=0.99,  epsilon=1.0, eps_dec=5e-7,
+    ddqn_agent = DDQNAgent(lr=1e-4, gamma=0.99,  max_epsilon=1.0, epsilon_decay=5e-7,
     batch_size=64, input_dims=7,fc1_dims=256, fc2_dims=256, n_actions=19,replace_target=500,name=Ename)
     #ddqn_agent.load_models()
     n_games = 6000
