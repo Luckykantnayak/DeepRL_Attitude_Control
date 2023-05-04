@@ -18,5 +18,5 @@ Sources used as template :
 File descriptions and  Instructions :
 1. DDQN_PER_torch.py and DDQN_UNIF_torch.py files are where DDQN network, Experience replay and action selection code is written (followed youtube tutorial on simple DQN from source 3 for UNIF case and borrowed code from source 1 & made changes as per my requirement and convinience ) .
 2. SpaceDEnv_original.py is the environment file borrowed from Source 2  and made changes in reward function and state defination.
-3. SPCMain_UNIF.py and SPCMain_UNIF.py main files which should be executed for training a model and it's corresponding average returns over episodes  is stored in the current directory by executing Plot_Training_res.py file .
+3. SPCMain_UNIF.py and SPCMain_PER.py main files which should be executed for training a model and it's corresponding average returns over episodes  is stored in the current directory by executing Plot_Training_res.py file .
 4. ddqn directory have all the model parameters files which can be loaded and tested for a random initial states by executing Control_test_plots.py.
