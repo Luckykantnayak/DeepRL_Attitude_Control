@@ -12,7 +12,7 @@ class Agent_Env(object):
     def __init__(self, Ename) -> None:
         frameskip = 5
         self.env = AttitudeControlEnv(frameskip=frameskip, steps=1000)
-        self.ddqn_agent = DDQNAgent(lr=0.0001, gamma=0.99,  epsilon=0,eps_end=0, eps_dec=5e-7,
+        self.ddqn_agent = DDQNAgent(lr=0.0001, gamma=0.99,  max_epsilon=0,eps_end=0, epsilon_decay=5e-7,
         batch_size=64, input_dims=7,fc1_dims=256, fc2_dims=256, n_actions=19,replace_target=500,name=Ename)
 
         self.ddqn_agent.load_models()

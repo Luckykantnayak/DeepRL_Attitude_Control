@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 # Read data from .txt file
-filename = 'Spacecraft_DDQN_UNIF_2.txt'  # Update with your actual file name
+filename = 'Spacecraft_DDQN_UNIF_4.txt'  # Update with your actual file name
 data = []
 with open(filename, 'r') as f:
     for line in f:
@@ -29,6 +29,6 @@ ax.legend(fontsize=18,loc='upper left')
 ax.tick_params(axis='both', which='major', labelsize=14)
 ax.set_ylabel('Returns', fontsize=24)
 ax.set_xlabel('Episodes', fontsize=24)
-ax.set_title("TD3 Controller Training", fontsize=30)
+ax.set_title("DDQN+UNIF-2 Controller Training", fontsize=30)
 
 plt.show()

@@ -192,7 +192,7 @@ class Network(nn.Module):
         print('... loading checkpoint ...')
         self.load_state_dict(torch.load(self.checkpoint_file))
 
-class DQNAgent:
+class DDQNAgent:
     """DQN Agent interacting with environment.
     
     Attribute:

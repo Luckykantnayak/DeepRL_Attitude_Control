@@ -42,11 +42,11 @@ class DeepQnetwork(nn.Module):
         self.load_state_dict(T.load(self.checkpoint_file))
 
 class DDQNAgent():
-    def __init__(self, gamma, epsilon, lr, input_dims, batch_size, n_actions,fc1_dims=256, fc2_dims=256, max_mem_size=100000, eps_end=0.01, eps_dec=5e-6, replace_target=100, chkpt_dir='ddqn',name='lunar_lander_ddqn_q') :
+    def __init__(self, gamma, max_epsilon, lr, input_dims, batch_size, n_actions,fc1_dims=256, fc2_dims=256, max_mem_size=100000, eps_end=0.01, epsilon_decay=5e-6, replace_target=100, chkpt_dir='ddqn',name='lunar_lander_ddqn_q') :
         self.gamma = gamma
-        self.epsilon = epsilon
+        self.epsilon = max_epsilon
         self.eps_min = eps_end
-        self.eps_dec = eps_dec
+        self.epsilon_decay = epsilon_decay
         self.lr = lr
         self.action_space = [i for i in range(n_actions)]
         self.mem_size = max_mem_size
@@ -131,7 +131,7 @@ class DDQNAgent():
         loss.backward()
         self.Q_online.optimizer.step()
 
-        self.epsilon = self.epsilon - self.eps_dec if self.epsilon > self.eps_min else self.eps_min
+        self.epsilon = self.epsilon - self.epsilon_decay if self.epsilon > self.eps_min else self.eps_min
 
         
            

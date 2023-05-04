@@ -1,5 +1,11 @@
 import numpy as np
+
+# For uniform sampling uncomment this
 from DDQN_UNIF_torch import DDQNAgent
+
+# For prioritized sampling uncomment this
+# from DDQN_PER_torch import DDQNAgent
+
 from SpaceDEnv_original import AttitudeControlEnv
 import time
 import matplotlib.pyplot as plt
@@ -8,11 +14,12 @@ import pandas as pd
 import plotly.express as px
 
 if __name__ == '__main__':
-    Ename = 'Spacecraft_DDQN_UNIF_4'
+    Ename = 'Spacecraft_DDQN_UNIF_2'  # change this to PER model file name present in ddqn directory
     I = np.array([[0.872, 0,0],[0, 0.115,0],[0,0, 0.797]])
     frameskip = 5
     env = AttitudeControlEnv(frameskip=frameskip, steps=700)
-    ddqn_agent = DDQNAgent(lr=0.0001, gamma=0.99,  epsilon=0,eps_end=0, eps_dec=5e-7,
+    
+    ddqn_agent = DDQNAgent(lr=0.0001, gamma=0.99,  max_epsilon=0, epsilon_decay=5e-7,
     batch_size=64, input_dims=7,fc1_dims=256, fc2_dims=256, n_actions=19,replace_target=500,name=Ename)
 
     ddqn_agent.load_models()
