@@ -12,7 +12,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from SegmentTree import MinSegmentTree, SumSegmentTree
 
-home_dir = os.path.expanduser('~')+"/RLProjects/"
+home_dir = os.path.expanduser('~')+"/DeepRL_Attitude_Control/"
 class ReplayBuffer:
     """A simple numpy replay buffer."""
 
