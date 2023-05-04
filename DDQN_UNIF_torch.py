@@ -5,7 +5,7 @@ import torch.optim as optim
 import numpy as np
 import os
 
-home_dir = os.path.expanduser('~')+"/RLProjects/"
+home_dir = os.path.expanduser('~')+"/DeepRL_Attitude_Control/"
     
 class DeepQnetwork(nn.Module):
     def __init__(self, lr, input_dims, fc1_dims, fc2_dims, n_actions, name, chkpt_dir) -> None:
